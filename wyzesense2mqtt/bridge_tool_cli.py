@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-# Borrowed from https://github.com/HclX/WyzeSensePy/blob/master/sample.py with slight modifications
+# Borrowed from https://github.com/HclX/WyzeSensePy/blob/master/sample.py
+# with slight modifications
 
 """Example of using WyzeSense USB bridge tool
 
@@ -72,8 +73,12 @@ def main(args):
         result = ws.Scan()
         (s_mac, s_type, s_version) = result
         if result:
-            print(f"Sensor found: mac={s_mac}, type={s_type}, version={s_version}")
-            logging.debug(f"Sensor found: mac={s_mac}, type={s_type}, version={s_version}")
+            print(
+                f"Sensor found: mac={s_mac}, type={s_type}, "
+                f"version={s_version}")
+            logging.debug(
+                f"Sensor found: mac={s_mac}, type={s_type}, "
+                f"version={s_version}")
         else:
             print("No sensor found!")
             logging.debug("No sensor found!")
@@ -82,7 +87,9 @@ def main(args):
         for mac in mac_list:
             if len(mac) != 8:
                 print(f"Invalid mac address, must be 8 characters: {mac}")
-                logging.debug(f"Invalid mac address, must be 8 characters: {mac}")
+                logging.debug(
+                    f"Invalid mac address, "
+                    f"must be 8 characters: {mac}")
                 continue
             print(f"Un-pairing sensor {mac}:")
             logging.debug(f"Un-pairing sensor {mac}:")

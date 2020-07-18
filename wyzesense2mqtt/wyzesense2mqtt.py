@@ -380,7 +380,8 @@ def on_event(WYZESENSE_DONGLE, event):
     if (valid_sensor_mac(event.MAC)):
         if (event.Type == "state"):
             LOGGER.info(f"State event data: {event}")
-            (sensor_type, sensor_state, sensor_battery, sensor_signal) = event.Data
+            (sensor_type, sensor_state,
+                sensor_battery, sensor_signal) = event.Data
 
             # Add sensor if it doesn't already exist
             if (event.MAC not in SENSORS):
